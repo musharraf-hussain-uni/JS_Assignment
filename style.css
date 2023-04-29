@@ -1,0 +1,52 @@
+/* Set box-sizing to border-box to include padding and border in element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Set margin and padding to 0 for the body element */
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(pic.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Add a border, margin, and padding to each assignment element */
+.ass1,
+.ass2,
+.ass3,
+.ass4,
+.ass5,
+.ass6,
+.ass7,
+.ass8,
+.ass9 {
+  border: 2px solid rgb(151, 151, 151);
+  border-radius: 20px;
+  margin: 5px;
+  padding: 5px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+
+/* Add a hover effect to buttons */
+button:hover {
+  background-color: rgb(91, 90, 90);
+}
+
+/* Style buttons */
+button {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

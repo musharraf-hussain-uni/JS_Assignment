@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Assignment</title>
+</head>
+<body>
+    <div class="ass1">
+        <!--Write a function that takes in a number from an input element and displays the factorial of that number in an output element.-->
+        <h5>1. Find the factorial of number.</h5>
+        <label>Enter a number:</label>
+        <input type="number" id="numInput">
+        <button onclick="calculateFactorial()">Calculate Factorial</button>
+        <p id="output1"></p>
+        <script type="text/javascript">
+        function calculateFactorial() {
+            let num = document.getElementById("numInput").value;
+            let factorial = 1;
+            for (let i = 2; i <= num; i++) {
+                factorial *= i;
+            }
+            document.getElementById("output1").innerHTML = "Factorial: " + factorial;
+            }
+        </script>
+    </div>
+    <div class="ass2">
+        <!--Write a function that takes in a string from an input element and displays the same string with all the vowels removed in an output element.-->
+        <h5>2. A vowels remover function.</h5>
+        <label>Enter a string:</label>
+        <input type="text" id="stringInput">
+        <button onclick="removeVowels()">Remove Vowels</button>
+        <p id="output2"></p>
+        <script type="text/javascript">
+        function removeVowels() {
+            let input1 = document.getElementById("stringInput").value;
+            let output1 = input1.replace(/[aeiouAEIOU]/g, '');
+            document.getElementById("output2").innerHTML = 'output: ' + output1;
+        }
+        </script>
+    </div>
+    <div class="ass3">
+        <!--Write a function that takes in an array of numbers from an input element and displays the largest number in the array in an output element.-->
+        <h5>largest number in the input</h5>
+        <label>3. Enter a list of numbers (comma-separated):</label>
+        <input type="text" id="numberInput">
+        <button onclick="findLargest()">Find Largest Number</button>
+        <p id="output3"></p>
+        <script type="text/javascript">
+        function findLargest() {
+            let inputArr = document.getElementById("numberInput").value.split(",").map(num => Number(num.trim()));
+            let largestNum = Math.max(...inputArr);
+            document.getElementById("output3").innerHTML = "Largest number: " + largestNum; 
+        }
+        </script>
+    </div>
+
+
+
+<div class="ass4">
+    <!-- Write a function that takes in a string from an input element and displays the same string with the first letter of every word capitalized in an output element.-->
+    <h5>4. First letter of every word capitalized</h5>
+    <label for="stringInput">Enter a string:</label>
+	<input type="text" id="stringInput">
+	<button onclick="capitalizeFirstLetter()">Capitalize First Letter</button>
+	<p id="output4"></p>
+
+	<script>
+		function capitalizeFirstLetter() {
+			let inputStr2 = document.getElementById("stringInput").value;
+			let words = inputStr2.split(" ");
+			for (let i = 0; i < words.length; i++) {
+				words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+			}
+			let outputStr2 = words.join(" ");
+			document.getElementById("output4").innerHTML = 'output:' + outputStr2;
+		}
+	</script>
+</div>
+
+
+<div class="ass5">
+    <!--Write a function that takes in an array of numbers from an input element and displays the average of those numbers in an output element.-->
+    <h5>5. displays the average of a number</h5>
+    <label>Enter a list of numbers (comma-separated):</label>
+  <input type="text" id="numberInput">
+  <button onclick="calculateAverage()">Calculate Average</button>
+  <p id="output5"></p>
+
+  <script>
+    function calculateAverage() {
+      let input_Arr = document.getElementById("numberInput").value.split(",").map(num => Number(num.trim()));
+      let sum = input_Arr.reduce((acc, curr) => acc + curr, 0);
+      let avg = sum / input_Arr.length;
+      document.getElementById("output5").innerHTML = "Average: " + avg;
+    }
+  </script>
+</div>
+
+
+
+<div class="ass6">
+    <!--Write a function that takes in a string from an input element and displays true if the string is a palindrome and false if it is not in an output element.-->
+    <h5>6. palindrome if its true or false</h5>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString">
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <p id="output6"></p>
+
+    <script type="text/javascript">
+      function checkPalindrome() {
+        // Get the input string
+        const inputString = document.getElementById("inputString").value;
+
+        // Convert the string to lowercase and remove non-alphanumeric characters
+        const cleanedString = inputString.toLowerCase().replace(/[^0-9a-z]/gi, "");
+
+        // Reverse the string
+        const reversedString = cleanedString.split("").reverse().join("");
+
+        // Check if the reversed string is equal to the original string
+        const isPalindrome = cleanedString === reversedString;
+
+        // Display the result in the output element
+        document.getElementById("output6").innerHTML = isPalindrome
+          ? "true"
+          : "false";
+      }
+    </script>
+</div>
+
+
+
+<div class="ass7">
+    <!--Write a function that takes in an array of strings from an input element and displays a new array with all the strings sorted in alphabetical order in an output element-->
+    <h5>7. Sorting alphabetic</h5>
+    <label>Enter a list of strings (comma-separated):</label>
+    <input type="text" id="stringInput">
+    <button onclick="sortStrings()">Sort Strings</button>
+    <p id="output7"></p>
+  </div>
+
+  <script>
+    function sortStrings() {
+      let inputArr7 = document.getElementById("stringInput").value.split(",");
+      let sortedArr7 = inputArr7.sort();
+      document.getElementById("output7").innerHTML = "Sorted strings: " + sortedArr7.join(", ");
+    }
+  </script>
+</div>
+
+
+
+<div class="ass8">
+    <!--Write a function that takes in a number from an input element and displays true if the number is prime and false if it is not in an output element.-->
+    <h5>8. Check if a number is prime:</h5>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <button onclick="checkPrime()">Check</button>
+    <p id="result"></p> 
+    <script>
+        function checkPrime() {
+            const num = parseInt(document.getElementById("number").value);
+            if (num <= 1) {
+                document.getElementById("result").innerHTML = `${num} is not a prime number.`;
+                return;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    document.getElementById("result").innerHTML = `${num} is not a prime number.`;
+                    return;
+                }
+            }
+            document.getElementById("result").innerHTML = `${num} is a prime number.`;
+        }
+    </script>
+</div>
+
+
+<div class="ass9">
+    <!--Write a function that takes in an array of objects from an input element and displays a new array with all the objects sorted by a given property in an output element.-->
+    <h5>9. Sort Objects by Property</h5>
+    <label>Enter an array of objects:</label>
+    <textarea id="inputObjects1"></textarea>
+    <label>Enter a property to sort by:</label>
+    <input type="text" id="sortProperty1">
+    <button onclick="sortObjects()">Sort Objects</button>
+    <p id="outputObjects1"></p>
+    <script>
+        function sortObjects() {
+            let inputObjects1 = JSON.parse(document.getElementById("inputObjects1").value);
+            let sortProperty1 = document.getElementById("sortProperty1").value;
+            let sortedObjects1 = inputObjects1.sort(function(a, b) {
+                return a[sortProperty1] > b[sortProperty1] ? 1 : -1;
+            });
+            document.getElementById("outputObjects").innerHTML = 'output' + JSON.stringify(sortedObjects1);
+        }
+    </script>
+</div>
+</body>
+</html>
